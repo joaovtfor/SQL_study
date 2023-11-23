@@ -82,8 +82,38 @@ SELECT titulo
 FROM Livro
 WHERE SituacaoLeitura = 'Sim'
 
---6- Faça o comando SQL para listar os autores estrangeiros e seus respectivos livros. Liste em ordem decrescente de País
---7- Faça o comando SQL para listar livros que tenham em seu título a palavra “Cachorra” e seu respectivo tema
---8- Faça o comando SQL para listar todos os autores (nome, data de nascimento) que nasceram no mês de janeiro (independente do ano) e que já faleceram
---9- Faça o comando SQL para listar os livros o nome dos autores e seus respectivos livros. Liste todos os autores, independente se possue livros publicado.
---10- Faça o comando SQL para listar os países que não possuem autores cadastrados
+--14- Faça o comando SQL para listar os autores estrangeiros e seus respectivos livros. Liste em ordem decrescente de País
+--15- Faça o comando SQL para listar livros que tenham em seu título a palavra “Cachorra” e seu respectivo tema
+--16- Faça o comando SQL para listar todos os autores (nome, data de nascimento) que nasceram no mês de janeiro (independente do ano) e que já faleceram
+--17- Faça o comando SQL para listar os livros o nome dos autores e seus respectivos livros. Liste todos os autores, independente se possue livros publicado.
+--18- Faça o comando SQL para listar os países que não possuem autores cadastrados
+
+--14
+SELECT nome, sigla
+FROM Autor
+WHERE sigla != 'BRA'
+
+--15
+SELECT l.Titulo, t.descricao
+FROM livro l INNER JOIN tema t ON 
+    l.codTema = t.codigo
+WHERE L.Titulo like '%cachorra%'
+
+--16
+SELECT nome, datanasc, dataMorte
+FROM Autor
+WHERE EXTRACT(MONTH FROM datanasc) = 1 AND DataMorte IS NOT NULL
+
+--17
+SELECT a.nome, l.titulo
+FROM Autor a INNER JOIN AutorLivro al ON
+    a.id = al.codAutor
+INNER JOIN Livro l ON
+    l.codigo = al.codLivro
+
+
+--18
+SELECT p.sigla 
+FROM Autor a RIGHT JOIN Pais p ON
+    a.sigla = p.sigla
+
