@@ -1,0 +1,92 @@
+--CREATE TABLE--
+
+Sintaxe:
+CREATE TABLE nome_da_tabela (
+coluna + tipo_de_dados + constraints(opcional)
+coluna + tipo_de_dados + constraints(opcional))
+
+
+--TIPO DE DADOS--
+
+Sintaxe:
+-INT: Um inteiro de tamanho norma
+-VARCHAR: String com tamanho entre 1 e 255 caracteres
+
+
+--COLUNAS--
+
+Sintaxe:
+-NOT NULL: expressa que o atributo não pode ser nulo
+-UNIQUE: indica que o atributo tem valor único na tabela.
+Qualquer tentativa de se introduzir uma linha na tabela
+contendo um valor igual ao do atributo será rejeitada. Serve
+para indicar chaves secundárias
+-DEFAULT: indica um valor default para a 
+
+
+--TIPOS DE CHAVES--
+
+Sintaxe:
+-PRIMARY KEY(atributos_chave – chave primária)
+-FOREIGN KEY (atributos) REFERENCES
+-CHECK(condição)
+
+
+--ALTER TABLE--
+
+Sintaxe:
+-DROP - realiza a retirada da coluna ou constraint
+especificada na estrutura da tabela.
+-ADD - realiza a inclusão de nova coluna ou constraint
+
+
+--INSET--
+
+Sintaxe:
+-INSERT INTO Tabela (lista-de-campos) VALUES (lista-valores)
+-INSERT INTO Tabela VALUES (lista-valores)
+
+
+--UPDATE--
+
+Sintaxe:
+-UPDATE tabela
+SET CAMPO = "valor-novo"
+WHERE <condição-da-alteração>
+
+
+--DELETE--
+
+Sintaxe:
+-DELETE FROM Tabela WHERE <condição-de-deleção>
+ou
+-DELETE FROM nome_tabela
+-- exclui todas as informações da tabela
+
+
+--SELECT--
+
+Sintaxe:
+-FROM <lista de tabelas>
+-WHERE <condição/filtro>
+
+*DICA*
+-SELECT < o que você quer como resultado? >
+-FROM < onde estão dos dados? >
+-WHERE < como você quer?
+
+
+--WHERE--
+
+Sintaxe:
+-BETWEEN entre
+-LIKE busca por um padrão
+-IN aceita apenas um valor do conjunto especificado
+-EXTRACT: A função extract extrai parte de uma data ou
+intervalo
+
+
+
+
+
+
