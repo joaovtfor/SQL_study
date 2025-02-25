@@ -1,0 +1,25 @@
+CREATE SEQUENCE seq_cidades
+START WITH 100;
+
+CREATE SEQUENCE seq_produtos
+START WITH 1000
+INCREMENT BY 10;
+
+SELECT seq_cidades.nextval
+FROM DUAL;
+
+SELECT seq_cidades.currval
+FROM DUAL;
+
+CREATE SEQUENCE seq_auto1
+START WITH 100
+INCREMENT BY 1;
+
+CREATE SEQUENCE seq_auto2
+START WITH 1
+INCREMENT BY 2
+MAXVALUE 9
+CYCLE NOCACHE;
+
+SELECT seq_auto1.nextval || '-' || seq_auto2.nextval
+FROM DUAL;
