@@ -95,3 +95,9 @@ MINUS
 SELECT Cidades.codigo, Cidades.cidade, Cidades.uf
 FROM Cidades, Ocorrencias
 WHERE Ocorrencias.cidade = Cidades.codigo;
+
+SELECT mo.MODELO, count(*) AS Contagem
+FROM modelos mo, carros ca, ocorrencias oc
+WHERE ca.MODELO = mo.codigo
+AND ca.placa = co.placa
+GROUP BY mo.modelo;
